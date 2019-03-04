@@ -200,10 +200,16 @@ namespace AgentAssignment
             {
                 return _newCommand ?? (_newCommand = new DelegateCommand(() =>
                 {
-                    var newAgent = new Agent();
-                    Agents.Add(newAgent);
-                    CurrentAgent = newAgent;
-                    CurrentSpecialityIndex = 0;
+                    var dlg = new AgentWindow();
+                    dlg.Title = "Add New Agent";
+                    Agent newAgent = new Agent();
+                    dlg.DataContext = newAgent;
+                    if (dlg.ShowDialog() == true)
+                    {
+                        Agents.Add(newAgent);
+                        CurrentSpecialityIndex = 0;
+                        CurrentAgent = newAgent;
+                    }
                 }));
             }
         }
