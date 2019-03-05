@@ -214,6 +214,13 @@ namespace AgentAssignment
             }
         }
 
+        ICommand _editCommand;
+        public ICommand _editAgentCommand 
+        {
+
+        }
+
+
         ICommand _deleteCommand;
         public ICommand DeleteAgentCommand => _deleteCommand ?? (_deleteCommand =
             new DelegateCommand(DeleteAgent, DeleteAgent_CanExecute)

@@ -174,7 +174,7 @@
                           Width="3"
                           Background="DarkBlue"
                           />
-            <ComboBox ItemsSource="{Binding Path=Agents}" 
+            <ListBox ItemsSource="{Binding Path=Agents}" 
                       SelectedItem="{Binding Path=CurrentAgent}"
                       SelectedIndex="{Binding Path=CurrentIndex}"
                       IsSynchronizedWithCurrentItem="True"
